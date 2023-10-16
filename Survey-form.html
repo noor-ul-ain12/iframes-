@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>survey form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+	<header id="title"> 
+		<h1>
+				Survey form 
+		</h1>
+	</header>
+	<div class="container"> 
+	<form id="survey-form" method="post">
+		<div class="row-tab"> 
+		<div class="label-tab">
+		<label id="name-label"> Name </label>
+		</div>
+		<div class="input-tab">
+			<input require name="name" id="name" type="text" placeholder="Enter your name"> </input>
+</div>
+</div>
+	<div class="row-tab">
+		<div class="label-tab">
+			<label id="email-label">Email </label>
+		</div> 
+		<div class="input-tab">
+			<input required  name="email" id="email" type="text" placeholder="Enter your Email">
+			</div>
+	</div>
+	
+	<div class="row-tab">
+		<div class="label-tab"><label> Phone Number</label>
+		</div> 
+		<div class="input-tab">
+		<input type="number" name="phone" placeholder="Enter your phone number">
+	</div>
+	</div>
+		<div class="row-tab"> 
+	<div class="label-tab"> 
+		<label> Age</label>
+		</div>
+		<div class="input-tab">
+		<input type="number" name="age" placeholder="Enter your age ">
+	</div>
+	</div>
+		
+		<div class="row-tab">
+			<div class="label-tab">
+			<label id="gender-label">Gender</label>
+			</div>
+			<div class="select-tab">
+			<select id="dropdown">
+				<option value="male"> Male</option>
+				<option value="femalie"> Female</option>
+				<option value="other"> Other </option>
+			</select>
+		</div>
+		</div>
+
+		<div class="row-tab">
+			<div class="label-tab">
+			<label> Which option best describes your current role</label>
+			</div>
+	
+		<div class="select-tab">
+			<select id="select-box">
+			<option>Student</option>
+			<option> Job holder</option>
+			<option> Buisnessman</option>
+			<option> other</option>
+			</select>
+		</div>
+		</div>
+		
+			<div class="row-tab"> 
+				<div class="label-tab">
+					<label> Your skills in web development <small> (Select all that apply)</small></small></label>
+				</div>
+			<div class="select-tab"> 
+			<label> HTML </label>
+			<input type="checkbox" name="skills">
+			<label> CSS </label>
+			<input type="checkbox" name="skills"> 
+			<label> Bootstrap</label>
+			<input type="checkbox" name="skills"> 
+			<label> javaScript </label>
+			<input type="checkbox" name="skills">  
+			<label> ReactJs </label>
+			<input type="checkbox" name="skills"> 
+			<label> MongoDb </label>
+			<input type="checkbox" name="skills"> 
+			<label> NextJs </label>
+			<input type="checkbox" name="skills"> 
+			</div>
+			</div>
+		<div class="row-tab">
+			<div class="label-tab">
+				<label> How like would you recommend our platform to your friends</label>
+			</div>
+			<div class="input-tab">
+				<div> 
+			<input type="radio" name="suggest">
+			<label> maybe</label> </div>
+			<div>
+			<input type="radio" name="suggest"> 
+			<label> Not sure</label></div>
+			<div>
+				<input type="radio" name="suggest">
+			<label> Definetly</label>
+			</div>
+			
+		</div>
+		</div>
+		<div class="btn-box">
+            <button type="submit">Submit</button>
+          </div>
+	</div>
+	</form>
+	<script src=" https://smtpjs.com/v3/smtp.js"> </script>
+	<script> 
+	var btn= document.getElementById('btn');
+	btn.addEventListener('click', function(e)
+	{
+		e.preventDefault()
+		var name=document.getElementById('name').value;
+		var email=document.getElementById('email').value;
+		var phone=document.getElementById('phone').value;
+		var age=document.getElementById('age').value;
+		var body='name' +name +'<br/> email: '+email +'<br/> phone: '
+		 +phone +'<br/> Age: ' +age;
+			Email.send({
+    			Host : "smtp.gmail.com",
+   				Username : "noorulain66.cs@gmail.com",
+    			Password : "4520420397718",
+    			To: 'noorulain66.cs@gmail.com',
+    			From : email,
+    			Subject : "New Contact form Enquiry",
+    			Body : body,
+		}).then(
+ 			 message => alert(message)
+			);
+	})
+	
+	</script>
+
+</body>
+</html>
